@@ -19,12 +19,9 @@ function Navbars() {
   return (
     <>
       <Navbar expand="lg" data-bs-theme="dark" style={{ color: "white", backgroundColor: '#333' }}>
+        
         <Container style={{ margin: '0px', display: 'flex', justifyContent: 'center', fontFamily: 'copperplate', fontSize: '24px' }}>
-
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Link className="d-flex" to="/" style={{ marginRight: '30px', textDecoration: 'none', fontWeight: 'bold' }} onClick={() => setNumeroDeElementosEnCarrito(0)}>
+             <Link className="d-flex" to="/" style={{ marginRight: '30px',marginLeft: '5px', textDecoration: 'none', fontWeight: 'bold' }} onClick={() => setNumeroDeElementosEnCarrito(0)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-snail">
                   <path d="M2 13a6 6 0 1 0 12 0 4 4 0 1 0-8 0 2 2 0 0 0 4 0" />
                   <circle cx="10" cy="13" r="8" />
@@ -34,6 +31,10 @@ function Navbars() {
                 </svg>
                 <h2 style={{ color: 'rgb(237, 121, 229)', marginLeft: '5px' }}>SpiralShop</h2>
               </Link>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              
 
               <Button variant="nav-link p-0"
                 onClick={() => setMostrarComponente(false)}
@@ -80,8 +81,8 @@ function Navbars() {
               </Button>
             </Nav>
 
-            <Nav style={{ display: 'flex', justifyContent: 'center', fontFamily: 'copperplate' }}>
-              <Nav.Link>
+              <Nav  style={{ display: 'flex', justifyContent: 'center', fontFamily: 'copperplate' }}>
+            
                 <Button
                   className={`nav-link `}
                   style={{ color: 'black' }}
@@ -111,7 +112,7 @@ function Navbars() {
                     <h5>items: {numeroDeElementosEnCarrito}</h5>
                   </Link>
                 </Button>
-              </Nav.Link>
+        
             </Nav>
           </Navbar.Collapse>
         </Container>
