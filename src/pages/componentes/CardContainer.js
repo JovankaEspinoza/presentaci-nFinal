@@ -32,8 +32,6 @@ const CardContainer = ({
 
 
 
-        
-
    
 
 
@@ -53,7 +51,6 @@ const CardContainer = ({
 
     const handleAmbasFunciones = product => {
             onAddProduct(product);
-            
             
           };
     const [products, setProducts] = useState([]);
@@ -94,7 +91,6 @@ const CardContainer = ({
         </Nav.Item>
         </Nav>
 
-   
 
             <div className='row'>
                 <div className='col-sm-1 m-1'>
@@ -110,7 +106,6 @@ const CardContainer = ({
                                                         <BootstrapCard.Img variant="top" src={product.image} style={{ width: '13rem' , height:'13rem'}} />
                                                     </div>
                                                     <BootstrapCard.Body>
-                                                        <div>
                                                             <div className='row'>
                                                                 <div className='col-12'style={{ width: '20rem' , height:'7rem'}}>
                                                                     <h5 class="card-title text-align-center d-flex justify-content-center">{product.title}</h5>
@@ -120,14 +115,15 @@ const CardContainer = ({
                                                                 backgroundcolor:"#EAE2E0"}}>
                                                                 <h5 class="card-title text-align-center d-flex justify-content-center">{product.price}$</h5>
                                                                 <br></br>
-                                                                 <Offcanva producto={product}/>
+                                                                <div  class=" d-flex justify-content-center m-2" >
+                                                                    <Offcanva producto={product}/>
+                                                                </div>
 
-                                                                
-                                                                <button style= {{backgroundColor:'rgb(237, 121, 229)'}} class="btn  d-flex justify-content-center m-2" onClick={() => handleAmbasFunciones (product)}>Añadir al carrito</button>
-                                                                
+
+                                                                <div  class="  d-flex justify-content-center m-2" >
+                                                                    <button style= {{backgroundColor:'rgb(237, 121, 229)'}} class="btn  d-flex justify-content-center" onClick={() => handleAmbasFunciones (product)}> Añadir al carrito </button>
+                                                                </div>
                                                             </div>
-                                                            
-                                                        </div>
                                                     </BootstrapCard.Body>
                                                 </BootstrapCard>
                                           </div>

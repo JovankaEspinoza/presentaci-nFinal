@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Card as BootstrapCard } from 'react-bootstrap';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const Offcanva = (props) => { 
     
@@ -20,33 +21,37 @@ const Offcanva = (props) => {
       </Button>
 
       <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Detalles del producto:</Offcanvas.Title>
+        <Offcanvas.Header closeButton style={{backgroundColor:'rgb(237, 121, 229)'}}>
+          <Offcanvas.Title >Detalles del producto:</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
         
         
-        <BootstrapCard.Img variant="top" src={producto.image} style={{ width: '13rem' , height:'13rem'}} />
-
-          <ul>
-            <li>
-              <h4>titulo:</h4>
-                <h6>{producto.title}</h6>
-            </li>
-            <li>
-              <h4>precio:</h4>
-              <h6>{producto.price}</h6>
-            </li>
-            <li>
-              <h4>categoria:</h4>
-              <h6>{producto.category}</h6>
-            </li>
-            <li>
-              <h4>descripcion:</h4>
-              <h6>{producto.description}</h6>
-            </li>
+          
+          <div class="card">
+            <BootstrapCard.Img variant="top" src={producto.image} style={{ width: '13rem' , height:'13rem', margin:'4rem'}} />
+              <ListGroup>
+              <ListGroup.Item variant="dark"><h5 class="card-title">Titulo:</h5></ListGroup.Item>
+                <ListGroup.Item variant="light">
+                  
+                  <h6 class="card-tex text-muted">{producto.title}</h6>
+                </ListGroup.Item>
+                <ListGroup.Item variant="dark"><h5 class="card-title">Precio:</h5></ListGroup.Item>
+                <ListGroup.Item variant="light">
+                  <h6 class="card-text text-muted" >{producto.price}</h6>
+                </ListGroup.Item>
+                <ListGroup.Item variant="dark"><h5 class="card-title">Categoria:</h5></ListGroup.Item>
+                <ListGroup.Item variant="light">
+                  <h6 class="card-text text-muted">{producto.category}</h6>
+                </ListGroup.Item>
+                <ListGroup.Item variant="dark"><h5>Descripcion:</h5></ListGroup.Item>
+                <ListGroup.Item variant="light">
+                  <h6 class="card-text text-muted">{producto.description}</h6>
+                </ListGroup.Item>
+              </ListGroup>
             
-          </ul>
+          </div>
+
         </Offcanvas.Body>
       </Offcanvas>
     </>
